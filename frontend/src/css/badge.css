@@ -2,7 +2,7 @@
 [data-before-text] {
 	--badge-offset-x: calc(0px - var(--badge-size) / 3);
 	--badge-offset-y: calc(0px - var(--badge-size) / 3);
-	--badge-size: 1.5rem;
+	--badge-size: 2.5rem;
 	--circle-size: 2rem;
 	--dot-offset: 0.5rem;
 	--dot-size: 0.5rem;
@@ -113,7 +113,6 @@
 	--t: -1px;
 }
 
-/* COLORS */
 [data-after-type*="blue"]::after,
 [data-before-type*="blue"]::before {
 	--bgc: #007acc;
@@ -143,7 +142,6 @@
 	--bgc: #c23934;
 }
 
-/* POSITION */
 [data-after-type*="top"]::after,
 [data-before-type*="top"]::before {
 	--b: auto;
@@ -189,21 +187,8 @@
 	--m: 0;
 }
 
-/* For this demo only */
 body {
 	font-family: system-ui, sans-serif;
 	font-size: 1rem;
 	padding: 1rem;
-}
-button {
-	background-image: linear-gradient(
-		34deg,
-		hsl(195, 25%, 80%),
-		hsl(195, 25%, 90%)
-	);
-	border: 0;
-	border-radius: 0.25rem;
-	font-size: 1rem;
-	margin: 0.5rem 0.5rem 0.5rem 0;
-	padding: 0.75rem 1.5rem;
 }

@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-function register() {
+import back from "../assets/back.svg";
+import { getItem } from "../utils/utils";
+
+function Register() {
+	const [ids, setIds] = useState({});
+	useEffect(() => {
+		setIds(JSON.parse(getItem("ids")));
+		console.log(ids);
+		return () => {};
+	}, []);
 	return (
 		<div
 			style={{
@@ -10,270 +19,6 @@ function register() {
 				background: "#F4F6FB",
 			}}
 		>
-			<div
-				style={{
-					height: 24,
-					left: 0,
-					top: 0,
-					position: "absolute",
-					flexDirection: "column",
-					justifyContent: "flex-start",
-					alignItems: "flex-start",
-					gap: 10,
-					display: "inline-flex",
-				}}
-			>
-				<div
-					style={{
-						alignSelf: "stretch",
-						height: 24,
-						paddingTop: 5,
-						paddingBottom: 6,
-						paddingLeft: 10,
-						paddingRight: 10,
-						justifyContent: "space-between",
-						alignItems: "center",
-						display: "inline-flex",
-					}}
-				>
-					<div
-						style={{ width: 31.27, height: 9.5, background: "#425061" }}
-					></div>
-					<div
-						style={{
-							justifyContent: "flex-end",
-							alignItems: "center",
-							gap: 11,
-							display: "flex",
-						}}
-					>
-						<div style={{ width: 16, height: 12, position: "relative" }}>
-							<div
-								style={{
-									width: 16,
-									height: 12,
-									left: 0,
-									top: 0,
-									position: "absolute",
-									background: "#171B1E",
-								}}
-							></div>
-							<img
-								style={{
-									width: 24,
-									height: 24,
-									left: -4,
-									top: 0,
-									position: "absolute",
-								}}
-								src="https://via.placeholder.com/24x24"
-								alt="https://via.placeholder.com/24x24"
-							/>
-							<div
-								style={{
-									width: 18,
-									height: 18,
-									left: -1,
-									top: 3,
-									position: "absolute",
-									opacity: 0.9,
-								}}
-							>
-								<img
-									style={{
-										width: 18,
-										height: 18,
-										left: 0,
-										top: 0,
-										position: "absolute",
-									}}
-									src="https://via.placeholder.com/18x18"
-									alt=""
-								/>
-								<img
-									style={{
-										width: 12,
-										height: 12,
-										left: 3,
-										top: 3,
-										position: "absolute",
-									}}
-									src="https://via.placeholder.com/12x12"
-									alt=""
-								/>
-								<div
-									style={{
-										width: 6,
-										height: 6,
-										left: 6,
-										top: 6,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-							</div>
-						</div>
-						<div style={{ width: 12, height: 12, position: "relative" }}>
-							<div
-								style={{
-									width: 12,
-									height: 12,
-									left: 0,
-									top: 0,
-									position: "absolute",
-									background: "#171B1E",
-								}}
-							></div>
-							<div
-								style={{
-									width: 6,
-									height: 12,
-									left: 6,
-									top: 0,
-									position: "absolute",
-									opacity: 0.3,
-								}}
-							>
-								<div
-									style={{
-										width: 3,
-										height: 12,
-										left: 3,
-										top: 0,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-								<div
-									style={{
-										width: 3,
-										height: 12,
-										left: 0,
-										top: 0,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-							</div>
-							<div
-								style={{
-									width: 6,
-									height: 12,
-									left: 0,
-									top: 0,
-									position: "absolute",
-									opacity: 0.9,
-								}}
-							>
-								<div
-									style={{
-										width: 3,
-										height: 12,
-										left: 3,
-										top: 0,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-								<div
-									style={{
-										width: 3,
-										height: 12,
-										left: 0,
-										top: 0,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-							</div>
-						</div>
-						<div style={{ width: 8, height: 13, position: "relative" }}>
-							<div
-								style={{
-									width: 8,
-									height: 13,
-									left: 0,
-									top: 0,
-									position: "absolute",
-									background: "#171B1E",
-								}}
-							></div>
-							<div
-								style={{
-									width: 8,
-									height: 6,
-									left: 0,
-									top: 7,
-									position: "absolute",
-									opacity: 0.9,
-								}}
-							>
-								<div
-									style={{
-										width: 8,
-										height: 3,
-										left: 0,
-										top: 3,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-								<div
-									style={{
-										width: 8,
-										height: 3,
-										left: 0,
-										top: 0,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-							</div>
-							<div
-								style={{
-									width: 8,
-									height: 7,
-									left: 0,
-									top: 0,
-									position: "absolute",
-									opacity: 0.3,
-								}}
-							>
-								<div
-									style={{
-										width: 8,
-										height: 3,
-										left: 0,
-										top: 4,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-								<div
-									style={{
-										width: 8,
-										height: 3,
-										left: 0,
-										top: 1,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-								<div
-									style={{
-										width: 4,
-										height: 1,
-										left: 2,
-										top: 0,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 			<div
 				style={{
 					width: 360,
@@ -297,6 +42,8 @@ function register() {
 					fontWeight: "500",
 					wordWrap: "break-word",
 				}}
+				data-after-text={ids["reg1"]}
+				data-after-type="badge top right"
 			>
 				Want To Open NRI Account
 			</div>
@@ -361,36 +108,7 @@ function register() {
 							position: "absolute",
 						}}
 					/>
-					<div
-						style={{
-							width: 14,
-							height: 14,
-							left: 5,
-							top: 5,
-							position: "absolute",
-						}}
-					>
-						<div
-							style={{
-								width: 14,
-								height: 1,
-								left: 0,
-								top: 6.5,
-								position: "absolute",
-								border: "2px #181F29 solid",
-							}}
-						></div>
-						<div
-							style={{
-								width: 7,
-								height: 14,
-								left: 0,
-								top: 0,
-								position: "absolute",
-								border: "2px #181F29 solid",
-							}}
-						></div>
-					</div>
+					<img src={back} height={24} width={24} alt="back" />
 				</div>
 			</div>
 			<div
@@ -417,7 +135,7 @@ function register() {
 				>
 					<div
 						style={{ width: 328, height: 66, position: "relative" }}
-						data-after-text="5"
+						data-after-text={ids["reg2"]}
 						data-after-type="badge top right"
 					>
 						<div
@@ -507,7 +225,7 @@ function register() {
 					</div>
 					<div
 						style={{ width: 328, height: 66, position: "relative" }}
-						data-after-text="5"
+						data-after-text={ids["reg3"]}
 						data-after-type="badge top right"
 					>
 						<div
@@ -608,7 +326,7 @@ function register() {
 					gap: 18,
 					display: "inline-flex",
 				}}
-				data-after-text="5"
+				data-after-text={ids["reg4"]}
 				data-after-type="badge top right"
 			>
 				<div style={{ width: 328, height: 49, position: "relative" }}>
@@ -628,7 +346,7 @@ function register() {
 								left: 0,
 								top: 0,
 								position: "absolute",
-								background: "#E8EBF1",
+								background: "#3F5BD9",
 								borderRadius: 4,
 							}}
 						/>
@@ -638,7 +356,7 @@ function register() {
 								top: 17,
 								position: "absolute",
 								textAlign: "center",
-								color: "#ACB2BD",
+								color: "#FFFFFF",
 								fontSize: 14,
 								fontFamily: "Roboto",
 								fontWeight: "500",
@@ -654,4 +372,4 @@ function register() {
 	);
 }
 
-export default register;
+export default Register;

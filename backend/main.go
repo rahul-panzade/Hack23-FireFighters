@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	_ "github.com/lib/pq"
 )
@@ -21,6 +22,13 @@ func main() {
 		log.Fatal(err)
 	}
 	router := gin.Default()
+	// Create a CORS middleware instance with your desired options.
+	config := cors.DefaultConfig()
+	config.AllowOrigins = []string{"http://localhost:3000"}
+	config.AllowMethods = []string{"GET", "POST", "PUT", "DELETE"}
+
+	// Use the CORS middleware with your router.
+	router.Use(cors.New(config))
 	router.GET("/events", getEventsData)
 	//router.POST("/albums", createAlbum)
 
@@ -31,6 +39,7 @@ func main() {
 func getEventsData(c *gin.Context) {
 	appNo := c.Query("appNumber")
 	c.Header("Content-Type", "application/json")
+	// c.Header("Access-Control-Allow-Origin", "*")
 	query := fmt.Sprintf("SELECT app_number, screen_name, events FROM hack23_events_tracks where app_number = '%s'", appNo)
 	rows, err := db.Query(query)
 	if err != nil {

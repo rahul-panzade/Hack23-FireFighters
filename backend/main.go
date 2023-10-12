@@ -4,10 +4,11 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
-	"github.com/gin-gonic/gin"
-	_ "github.com/lib/pq"
 	"log"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+	_ "github.com/lib/pq"
 )
 
 var db *sql.DB
@@ -15,7 +16,7 @@ var db *sql.DB
 func main() {
 
 	var err error
-	db, err = sql.Open("postgres", "postgres://postgres:postgres@localhost/mydb?sslmode=disable")
+	db, err = sql.Open("postgres", "postgres://workflow:workflow123@kyc2-services-dev.c0iswfmnnzar.ap-south-1.rds.amazonaws.com/services?sslmode=disable")
 	if err != nil {
 		log.Fatal(err)
 	}

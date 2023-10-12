@@ -415,7 +415,11 @@ function register() {
 						display: "flex",
 					}}
 				>
-					<div style={{ width: 328, height: 66, position: "relative" }}>
+					<div
+						style={{ width: 328, height: 66, position: "relative" }}
+						data-after-text="5"
+						data-after-type="badge top right"
+					>
 						<div
 							style={{
 								left: 0,
@@ -501,7 +505,11 @@ function register() {
 							</div>
 						</div>
 					</div>
-					<div style={{ width: 328, height: 66, position: "relative" }}>
+					<div
+						style={{ width: 328, height: 66, position: "relative" }}
+						data-after-text="5"
+						data-after-type="badge top right"
+					>
 						<div
 							style={{
 								left: 0,
@@ -600,6 +608,8 @@ function register() {
 					gap: 18,
 					display: "inline-flex",
 				}}
+				data-after-text="5"
+				data-after-type="badge top right"
 			>
 				<div style={{ width: 328, height: 49, position: "relative" }}>
 					<div

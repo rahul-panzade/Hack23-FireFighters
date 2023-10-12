@@ -1,3 +1,5 @@
+import "./css/badge.css";
+
 import {
 	Link,
 	Navigate,

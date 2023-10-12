@@ -30,7 +30,7 @@ func main() {
 func getEventsData(c *gin.Context) {
 	appNo := c.Query("appNumber")
 	c.Header("Content-Type", "application/json")
-	query := fmt.Sprintf("SELECT app_number, screen_name, events FROM hack23_events_tracks where app_number = '%s'", appNo)
+	query := fmt.Sprintf("SELECT app_number, screen_name, events FROM hack23_events_tracks where app_number = '%s' order by last_update_ts desc limit 1", appNo)
 	rows, err := db.Query(query)
 	if err != nil {
 		c.IndentedJSON(http.StatusBadRequest, gin.H{"error": err})

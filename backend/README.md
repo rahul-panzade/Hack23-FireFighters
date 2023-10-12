@@ -1,19 +1,16 @@
-# Hack23-FireFighters
+
 BE api for app(iOS and Android) events tracking.
 
-Team Players
-* TAPAS PANDA
-* SHIJIN VARGHESE
-* SAILAZA PRASAD
-* RAHUL PANZADE
+Assumption:
+Flutter app continously sending data to **hack23_events_tracks** similar like the clickstream events but without delay.
+That POST api missing and we mocked the data.
 
-
-Curl
+**Curl**
 
 `curl --location 'localhost:8080/events?appNumber=Test' \
 --header 'Content-Type: application/json'`
 
-Response
+**Response**
 
 `{
 "status": "200",

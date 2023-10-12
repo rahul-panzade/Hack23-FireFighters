@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	_ "github.com/lib/pq"
 	"log"
@@ -20,6 +21,11 @@ func main() {
 		log.Fatal(err)
 	}
 	router := gin.Default()
+	// Create a CORS middleware instance with your desired options.
+	config := cors.DefaultConfig()
+	config.AllowOrigins = []string{"http://localhost:3000"}
+	config.AllowMethods = []string{"GET", "POST", "PUT", "DELETE"}
+
 	router.GET("/events", getEventsData)
 	//router.POST("/albums", createAlbum)
 

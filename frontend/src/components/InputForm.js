@@ -3,8 +3,8 @@ import "../css/input.css";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
-const QUERY_PARAMETER: string = "appid";
-const InputForm = () => {
+const QUERY_PARAMETER = "appid";
+const InputForm = (props) => {
 	const [inputValue, setInputValue] = useState("");
 	const history = useNavigate();
 	const [currentQueryParameters, setSearchParams] = useSearchParams();
@@ -18,10 +18,10 @@ const InputForm = () => {
 		setInputValue(e.target.value);
 	};
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		// history(`/${inputValue}`);
-	};
+	// const handleSubmit = (e) => {
+	// 	e.preventDefault();
+	// 	// history(`/${inputValue}`);
+	// };
 
 	useEffect(() => {
 		if (currentQueryParameters.get(QUERY_PARAMETER)) {
@@ -33,14 +33,12 @@ const InputForm = () => {
 
 	return (
 		<div className="search-input">
-			<form onSubmit={handleSubmit} role="search">
+			<form onSubmit={(e) => props.handleSubmit(e, inputValue)} role="search">
 				<label for="search">Search for Application Id</label>
 				<input
 					id="search"
 					type="search"
 					placeholder="Search Application Number"
-					autofocus
-					required
 					value={inputValue}
 					onChange={handleChange}
 				/>

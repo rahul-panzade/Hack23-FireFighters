@@ -23,7 +23,7 @@ func main() {
 	router := gin.Default()
 	// Create a CORS middleware instance with your desired options.
 	config := cors.DefaultConfig()
-	config.AllowOrigins = []string{"http://localhost:3000"}
+	config.AllowOrigins = []string{"http://localhost:3000", "http://localhost:3001"}
 	config.AllowMethods = []string{"GET", "POST", "PUT", "DELETE"}
 
 	router.GET("/events", getEventsData)
@@ -36,6 +36,7 @@ func main() {
 func getEventsData(c *gin.Context) {
 	appNo := c.Query("appNumber")
 	c.Header("Content-Type", "application/json")
+	c.Header("Access-Control-Allow-Origin", "*")
 	query := fmt.Sprintf("SELECT app_number, screen_name, events FROM hack23_events_tracks where app_number = '%s' order by last_update_ts desc limit 1", appNo)
 	rows, err := db.Query(query)
 	if err != nil {

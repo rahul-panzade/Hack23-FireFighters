@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-function pan() {
+import back from "../assets/back.svg";
+import { getItem } from "../utils/utils";
+
+function Pan() {
+	const [ids, setIds] = useState({});
+	useEffect(() => {
+		setIds(JSON.parse(getItem("ids")));
+		console.log(ids);
+		return () => {};
+	}, []);
 	return (
 		<div
 			style={{
@@ -34,80 +43,6 @@ function pan() {
 				>
 					9:41
 				</div>
-				<div
-					style={{
-						left: 295,
-						top: 15,
-						position: "absolute",
-						justifyContent: "flex-start",
-						alignItems: "flex-start",
-						gap: 2,
-						display: "inline-flex",
-					}}
-				>
-					<div style={{ width: 20, height: 16, position: "relative" }}>
-						<img
-							style={{
-								width: 17,
-								height: 10.67,
-								left: 1,
-								top: 3,
-								position: "absolute",
-							}}
-							src="https://via.placeholder.com/17x11"
-							alt=""
-						/>
-					</div>
-					<div style={{ width: 16, height: 16, position: "relative" }}>
-						<img
-							style={{
-								width: 15.27,
-								height: 10.97,
-								left: 0.35,
-								top: 3,
-								position: "absolute",
-							}}
-							src="https://via.placeholder.com/15x11"
-							alt=""
-						/>
-					</div>
-					<div style={{ width: 25, height: 16, position: "relative" }}>
-						<div
-							style={{
-								width: 22,
-								height: 11.33,
-								left: 1,
-								top: 2,
-								position: "absolute",
-								opacity: 0.35,
-								borderRadius: 2.67,
-								border: "1px #0F172A solid",
-							}}
-						></div>
-						<div
-							style={{
-								width: 1.33,
-								height: 4,
-								left: 24,
-								top: 5.67,
-								position: "absolute",
-								opacity: 0.4,
-								background: "#0F172A",
-							}}
-						></div>
-						<div
-							style={{
-								width: 18,
-								height: 7.33,
-								left: 3,
-								top: 4,
-								position: "absolute",
-								background: "#0F172A",
-								borderRadius: 1.33,
-							}}
-						></div>
-					</div>
-				</div>
 			</div>
 			<div
 				style={{
@@ -136,45 +71,7 @@ function pan() {
 						position: "absolute",
 					}}
 				>
-					<div
-						style={{
-							width: 24,
-							height: 24,
-							left: 0,
-							top: 0,
-							position: "absolute",
-						}}
-					/>
-					<div
-						style={{
-							width: 14,
-							height: 14,
-							left: 5,
-							top: 5,
-							position: "absolute",
-						}}
-					>
-						<div
-							style={{
-								width: 14,
-								height: 1,
-								left: 0,
-								top: 6.5,
-								position: "absolute",
-								border: "2px #2A394E solid",
-							}}
-						></div>
-						<div
-							style={{
-								width: 7,
-								height: 14,
-								left: 0,
-								top: 0,
-								position: "absolute",
-								border: "2px #2A394E solid",
-							}}
-						></div>
-					</div>
+					<img src={back} height={24} width={24} alt="back" />
 				</div>
 				<div
 					style={{
@@ -189,67 +86,10 @@ function pan() {
 						textTransform: "uppercase",
 						wordWrap: "break-word",
 					}}
+					data-after-text={ids["pan1"]}
+					data-after-type="badge top right"
 				>
 					Need help?
-				</div>
-				<div
-					style={{
-						width: 24,
-						height: 24,
-						left: 252,
-						top: 16,
-						position: "absolute",
-					}}
-				>
-					<div
-						style={{
-							width: 24,
-							height: 24,
-							left: 0,
-							top: 0,
-							position: "absolute",
-						}}
-					></div>
-					<div
-						style={{
-							width: 16,
-							height: 16,
-							left: 4,
-							top: 5,
-							position: "absolute",
-							border: "1.50px #3F5BD9 solid",
-						}}
-					></div>
-					<div
-						style={{
-							width: 0,
-							height: 0.01,
-							left: 12,
-							top: 11,
-							position: "absolute",
-							border: "1.50px #3F5BD9 solid",
-						}}
-					></div>
-					<div
-						style={{
-							width: 0,
-							height: 0.01,
-							left: 8,
-							top: 11,
-							position: "absolute",
-							border: "1.50px #3F5BD9 solid",
-						}}
-					></div>
-					<div
-						style={{
-							width: 0,
-							height: 0.01,
-							left: 16,
-							top: 11,
-							position: "absolute",
-							border: "1.50px #3F5BD9 solid",
-						}}
-					></div>
 				</div>
 			</div>
 			<div
@@ -268,16 +108,17 @@ function pan() {
 				style={{
 					width: 335,
 					left: 20,
-					top: 743,
+					top: 763,
 					position: "absolute",
 					textAlign: "center",
 					color: "#3F5BD9",
 					fontSize: 16,
 					fontFamily: "Barlow",
 					fontWeight: "600",
-					lineHeight: 24,
 					wordWrap: "break-word",
 				}}
+				data-after-text={ids["pan3"]}
+				data-after-type="badge top right"
 			>
 				Upload a file or Add details manually
 			</div>
@@ -298,14 +139,15 @@ function pan() {
 					gap: 10,
 					display: "inline-flex",
 				}}
+				data-after-text={ids["pan2"]}
+				data-after-type="badge top right"
 			>
 				<div
 					style={{
 						color: "white",
-						fontSize: 14,
+						fontSize: 10,
 						fontFamily: "Barlow",
-						fontWeight: "600",
-						wordWrap: "break-word",
+						fontWeight: "500",
 					}}
 				>
 					CLICK A PICTURE
@@ -1112,19 +954,8 @@ function pan() {
 					</div>
 				</div>
 			</div>
-			<div
-				style={{
-					width: 133,
-					height: 5,
-					left: 121,
-					top: 799,
-					position: "absolute",
-					background: "black",
-					borderRadius: 100,
-				}}
-			/>
 		</div>
 	);
 }
 
-export default pan;
+export default Pan;

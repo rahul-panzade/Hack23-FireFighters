@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-function email() {
+import back from "../assets/back.svg";
+import { getItem } from "../utils/utils";
+import google from "../assets/google.svg";
+
+function Email() {
+	const [ids, setIds] = useState({});
+	useEffect(() => {
+		setIds(JSON.parse(getItem("ids")));
+		console.log(ids);
+		return () => {};
+	}, []);
 	return (
 		<div
 			style={{
@@ -58,330 +68,9 @@ function email() {
 					position: "absolute",
 				}}
 			>
-				<div
-					style={{
-						width: 375,
-						height: 56,
-						left: 0,
-						top: 0,
-						position: "absolute",
-					}}
-				/>
-				<div
-					style={{
-						width: 24,
-						height: 24,
-						left: 16,
-						top: 16,
-						position: "absolute",
-					}}
-				>
-					<div
-						style={{
-							width: 24,
-							height: 24,
-							left: 0,
-							top: 0,
-							position: "absolute",
-						}}
-					/>
-					<div
-						style={{
-							width: 14,
-							height: 14,
-							left: 5,
-							top: 5,
-							position: "absolute",
-						}}
-					>
-						<div
-							style={{
-								width: 14,
-								height: 1,
-								left: 0,
-								top: 6.5,
-								position: "absolute",
-								border: "2px #181F29 solid",
-							}}
-						></div>
-						<div
-							style={{
-								width: 7,
-								height: 14,
-								left: 0,
-								top: 0,
-								position: "absolute",
-								border: "2px #181F29 solid",
-							}}
-						></div>
-					</div>
-				</div>
+				<img src={back} height={24} width={24} alt="back" />
 			</div>
-			<div
-				style={{
-					height: 24,
-					left: 0,
-					top: 0,
-					position: "absolute",
-					flexDirection: "column",
-					justifyContent: "flex-start",
-					alignItems: "flex-start",
-					gap: 10,
-					display: "inline-flex",
-				}}
-			>
-				<div
-					style={{
-						alignSelf: "stretch",
-						height: 24,
-						paddingTop: 5,
-						paddingBottom: 6,
-						paddingLeft: 10,
-						paddingRight: 10,
-						justifyContent: "space-between",
-						alignItems: "center",
-						display: "inline-flex",
-					}}
-				>
-					<div
-						style={{ width: 31.27, height: 9.5, background: "#425061" }}
-					></div>
-					<div
-						style={{
-							alignSelf: "stretch",
-							justifyContent: "flex-end",
-							alignItems: "center",
-							gap: 11,
-							display: "flex",
-						}}
-					>
-						<div style={{ width: 16, height: 12, position: "relative" }}>
-							<div
-								style={{
-									width: 16,
-									height: 12,
-									left: 0,
-									top: 0,
-									position: "absolute",
-									background: "#171B1E",
-								}}
-							></div>
-							<img
-								style={{
-									width: 24,
-									height: 24,
-									left: -4,
-									top: 0,
-									position: "absolute",
-								}}
-								src="https://via.placeholder.com/24x24"
-								alt=""
-							/>
-							<div
-								style={{
-									width: 18,
-									height: 18,
-									left: -1,
-									top: 3,
-									position: "absolute",
-									opacity: 0.9,
-								}}
-							>
-								<img
-									style={{
-										width: 18,
-										height: 18,
-										left: 0,
-										top: 0,
-										position: "absolute",
-									}}
-									src="https://via.placeholder.com/18x18"
-									alt=""
-								/>
-								<img
-									style={{
-										width: 12,
-										height: 12,
-										left: 3,
-										top: 3,
-										position: "absolute",
-									}}
-									src="https://via.placeholder.com/12x12"
-									alt=""
-								/>
-								<div
-									style={{
-										width: 6,
-										height: 6,
-										left: 6,
-										top: 6,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-							</div>
-						</div>
-						<div style={{ width: 12, height: 12, position: "relative" }}>
-							<div
-								style={{
-									width: 12,
-									height: 12,
-									left: 0,
-									top: 0,
-									position: "absolute",
-									background: "#171B1E",
-								}}
-							></div>
-							<div
-								style={{
-									width: 6,
-									height: 12,
-									left: 6,
-									top: 0,
-									position: "absolute",
-									opacity: 0.3,
-								}}
-							>
-								<div
-									style={{
-										width: 3,
-										height: 12,
-										left: 3,
-										top: 0,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-								<div
-									style={{
-										width: 3,
-										height: 12,
-										left: 0,
-										top: 0,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-							</div>
-							<div
-								style={{
-									width: 6,
-									height: 12,
-									left: 0,
-									top: 0,
-									position: "absolute",
-									opacity: 0.9,
-								}}
-							>
-								<div
-									style={{
-										width: 3,
-										height: 12,
-										left: 3,
-										top: 0,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-								<div
-									style={{
-										width: 3,
-										height: 12,
-										left: 0,
-										top: 0,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-							</div>
-						</div>
-						<div style={{ width: 8, height: 13, position: "relative" }}>
-							<div
-								style={{
-									width: 8,
-									height: 13,
-									left: 0,
-									top: 0,
-									position: "absolute",
-									background: "#171B1E",
-								}}
-							></div>
-							<div
-								style={{
-									width: 8,
-									height: 6,
-									left: 0,
-									top: 7,
-									position: "absolute",
-									opacity: 0.9,
-								}}
-							>
-								<div
-									style={{
-										width: 8,
-										height: 3,
-										left: 0,
-										top: 3,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-								<div
-									style={{
-										width: 8,
-										height: 3,
-										left: 0,
-										top: 0,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-							</div>
-							<div
-								style={{
-									width: 8,
-									height: 7,
-									left: 0,
-									top: 0,
-									position: "absolute",
-									opacity: 0.3,
-								}}
-							>
-								<div
-									style={{
-										width: 8,
-										height: 3,
-										left: 0,
-										top: 4,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-								<div
-									style={{
-										width: 8,
-										height: 3,
-										left: 0,
-										top: 1,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-								<div
-									style={{
-										width: 4,
-										height: 1,
-										left: 2,
-										top: 0,
-										position: "absolute",
-										background: "#425061",
-									}}
-								></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+
 			<div
 				style={{
 					left: 16,
@@ -402,6 +91,8 @@ function email() {
 						gap: 8,
 						display: "flex",
 					}}
+					data-after-text={ids["email1"]}
+					data-after-type="badge top right"
 				>
 					<div
 						style={{
@@ -421,17 +112,6 @@ function email() {
 						<div style={{ width: 24, height: 24, position: "relative" }}>
 							<div
 								style={{
-									width: 24,
-									height: 24,
-									left: 0,
-									top: 0,
-									position: "absolute",
-									background: "white",
-									borderRadius: 9999,
-								}}
-							/>
-							<div
-								style={{
 									width: 18,
 									height: 18,
 									left: 3,
@@ -448,46 +128,17 @@ function email() {
 									position: "absolute",
 								}}
 							>
-								<div
+								<img
 									style={{
-										width: 6.46,
-										height: 6.32,
-										left: 6.73,
-										top: 5.5,
 										position: "absolute",
-										background: "#4285F4",
+										top: "-5",
+										left: "-5",
 									}}
-								></div>
-								<div
-									style={{
-										width: 10.47,
-										height: 5.4,
-										left: 0.72,
-										top: 8.06,
-										position: "absolute",
-										background: "#34A853",
-									}}
-								></div>
-								<div
-									style={{
-										width: 2.9,
-										height: 6.07,
-										left: 0,
-										top: 3.68,
-										position: "absolute",
-										background: "#FBBC05",
-									}}
-								></div>
-								<div
-									style={{
-										width: 10.51,
-										height: 5.4,
-										left: 0.72,
-										top: 0,
-										position: "absolute",
-										background: "#EB4335",
-									}}
-								></div>
+									src={google}
+									alt="google"
+									height={24}
+									width={24}
+								/>
 							</div>
 						</div>
 						<div
@@ -513,6 +164,8 @@ function email() {
 						gap: 8,
 						display: "flex",
 					}}
+					data-after-text={ids["email2"]}
+					data-after-type="badge top right"
 				>
 					<div
 						style={{
@@ -590,4 +243,4 @@ function email() {
 	);
 }
 
-export default email;
+export default Email;

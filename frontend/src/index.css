@@ -7,6 +7,13 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+	font-family: $name;
+	src: url("https://cdn.angelone.in/kyc/fonts/barlow-regular.eot");
+	src: url("https://cdn.angelone.in/kyc/fonts/barlow-regular.ttf")
+		format("truetype");
+	font-display: swap;
+}
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;

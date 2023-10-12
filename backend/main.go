@@ -66,10 +66,10 @@ func getEventsData(c *gin.Context) {
 	}
 
 	if model.Events == nil {
-		c.IndentedJSON(http.StatusOK, Response{Status: "404", Message: "No records found", Data: nil})
+		c.IndentedJSON(http.StatusBadRequest, Response{Status: "404", Message: "No records found", Data: nil})
+	} else {
+		c.IndentedJSON(http.StatusOK, Response{Status: "200", Message: "", Data: model})
 	}
-
-	c.IndentedJSON(http.StatusOK, Response{Status: "200", Message: "", Data: model})
 }
 
 type EventModel struct {

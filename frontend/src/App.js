@@ -37,10 +37,12 @@ function AppLayout() {
 	function networkRequest(appid) {
 		axios.get(`http://localhost:8080/events?appNumber=${appid}`).then((res) => {
 			console.log(res.data);
-			if (res.data.data.screen_name !== pathname) {
+			if ( res && res.data && res.data.data && res.data.data.screen_name && res.data.data.screen_name !== pathname) {
 				history(`/${res.data.data.screen_name}?appid=${appid}`);
 			}
-			localStorage.setItem("ids", JSON.stringify(res.data.data.events));
+			if ( res && res.data && res.data.data && res.data.data.events){
+				localStorage.setItem("ids", JSON.stringify(res.data.data.events));
+			}
 		});
 	}
 	useEffect(() => {

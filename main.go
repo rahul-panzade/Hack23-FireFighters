@@ -15,7 +15,7 @@ var db *sql.DB
 func main() {
 
 	var err error
-	db, err = sql.Open("postgres", "postgres://workflow:workflow123@kyc2-services-dev.c0iswfmnnzar.ap-south-1.rds.amazonaws.com/services?sslmode=disable")
+	db, err = sql.Open("postgres", "postgres://postgres:postgres@localhost/mydb?sslmode=disable")
 	if err != nil {
 		log.Fatal(err)
 	}

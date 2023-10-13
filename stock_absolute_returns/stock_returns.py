@@ -7,8 +7,8 @@ import re
 
 # Input Parameters
 AMOUNT = 1000
-SYMBOL = "HAL"
-FROM = calendar.timegm(datetime.datetime(2023, 6, 1).timetuple())
+SYMBOL = "IOC"
+FROM = calendar.timegm(datetime.datetime(2022, 6, 1).timetuple())
 TO = calendar.timegm(datetime.datetime.now().timetuple())
 
 def getPriceDiffernce():
@@ -56,11 +56,12 @@ def getBonusSplitDivident():
     j = json.loads(response.text)
     events = []
     for idx, x in enumerate(j['id']):
-        events.append(getTypeAndDate(j['label'][idx],j['text'][idx]))
-    return events    
+        if j['time'][idx] >= FROM :
+            events.append(getTypeAndDate(j['label'][idx],j['text'][idx]))
+    return events
     # print(events)
     # print(response.text)
-    
+
 def getTypeAndDate(type, html):
     soup = BeautifulSoup(html, 'html.parser')
     info_div = soup.find('div')
@@ -68,7 +69,7 @@ def getTypeAndDate(type, html):
 
     type_match = ''
     type_desc = ''
-    if type == 'B': 
+    if type == 'B':
        type_desc = 'Bonus'
        type_match = re.search(r"Bonus:\s+([^<]+)", div_text)
     elif type == 'D':
@@ -76,8 +77,10 @@ def getTypeAndDate(type, html):
        type_match = re.search(r'Dividend:\s+([^<]+)', div_text)
     elif type == 'S':
        type_desc = 'Split'
-       type_match = re.search(r"Split:\s+([^<]+)", div_text)    
-   
+       type_match = re.search(r"Split:\s+([^<]+)", div_text)
+    else:
+       type_desc = 'Rights'
+       type_match = re.search(r"Rights:\s+([^<]+)", div_text)
     # ex_date_match = re.search(r"Ex-Date:\s+([\d, A-Za-z]+)", div_text)
 
     type_value = type_match.group(1) if type_match else None
@@ -97,7 +100,7 @@ response = {
     "investedAmount": AMOUNT,
     "initialPrice": startEndPrice['start'],
     "currentPrice": startEndPrice['end'],
-    "totalPercChanged": perc,
+    "totalPercChange": perc,
     "marketPrice": AMOUNT * (100 + perc),
     "corporatesEvents": events
     

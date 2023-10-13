@@ -19,6 +19,8 @@ This will reduce unnecessary interactions between agents and users, freeing up v
 * RAHUL PANZADE
 
 [Working demo link](https://drive.google.com/file/d/1RMjAN9pyAsuDGd6PCpMig45-FHh085EP/view?usp=sharing)
+[Presentation link] (https://docs.google.com/presentation/d/1uc-x-_dx181MimV9UuGSLFSqIu324empu8oNuHhWqtQ/edit?exids=71471483,71471477#slide=id.g248b559d830_0_0) 
+
 
 **Hack-2**
 Idea: Smart Stock Returns Calculators

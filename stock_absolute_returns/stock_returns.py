@@ -101,7 +101,7 @@ response = {
     "initialPrice": startEndPrice['start'],
     "currentPrice": startEndPrice['end'],
     "totalPercChange": perc,
-    "marketPrice": AMOUNT * (100 + perc),
+    "marketPrice": AMOUNT * (100 + perc) / 100,
     "corporatesEvents": events
     
 }

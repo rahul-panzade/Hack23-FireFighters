@@ -19,3 +19,17 @@ This will reduce unnecessary interactions between agents and users, freeing up v
 * RAHUL PANZADE
 
 [Working demo link](https://drive.google.com/file/d/1RMjAN9pyAsuDGd6PCpMig45-FHh085EP/view?usp=sharing)
+
+**Hack-2**
+Idea: Smart Stock Returns Calculators
+
+Problems:
+
+Whenever we want to check performance of any stock, we are getting only percentage(%) changes, but as investor there are multiple things that will play vital role like divident, split, bonus. So if we want to check all of these parameters, need to search one parameter at a time.
+
+Introducing "Smart Stock Returns Calculators" where you will get all the information at one clicked.
+
+Concept is implemented using MoneyControl data.
+
+[Stock return calculator Working demo link](https://drive.google.com/file/d/1GCTEDrpaGmTprmPXQsIToz964oWD78Yj/view?usp=drive_link)
+
